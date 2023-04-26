@@ -1,0 +1,28 @@
+<div id="bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 text-dark">
+                <div class="login-form bg-light mt-5 p-4">
+                    <form class="row g-3" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                        <h3><strong>Bienvenido</strong></h3>
+                        <div class="col-12">
+                            <label>Id del estudiante</label>
+                            <input [(ngModel)]="student.id" type="text" name="id"
+                                class="form-control bg-white text-black" placeholder="Sttudent Id">
+                        </div>
+                        <div class="col-12">
+                            <label>Contraseña</label>
+                            <input [(ngModel)]="student.password" type="password" name="password"
+                                class="form-control bg-white text-black" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-dark float-end">Iniciar sesion</button>
+                        </div>
+                        <span *ngIf="error" class="text-danger">Usuario o contraseña incorrectos</span>
+                    </form>
+                    <hr class="mt-4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
