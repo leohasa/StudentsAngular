@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-header">
+      <strong>{{student.id}} - {{student.name}}</strong>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Student Information</h5>
+      <p class="card-text">
+        <strong>Age: </strong>{{student.age}}<br>
+        <strong>Email: </strong>{{student.email}}<br>
+        <strong>Estado: </strong>{{student.registered ? 'Inscrito' : 'No inscrito'}}
+      </p>
+      <button type="button" class="btn btn-primary me-3" (click)="updateStudent()">Edit Student</button>
+      <button type="button" class="btn btn-danger" (click)="deleteStudent()">Delete Student</button>
+    </div>
+  </div>

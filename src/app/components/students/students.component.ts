@@ -23,10 +23,30 @@ export class StudentsComponent implements OnInit {
     }
 
     onSubmit() {
-        this.studentService.addStudent(this.student)
+        if (this.student.id) {
+            this.studentService.updateStudent(this.student)
+            .subscribe(data => {
+                this.students = this.students.map(s => s.id === data.id ? data : s);
+                this.student = new Student();
+            });
+        }
+        else {
+            this.studentService.addStudent(this.student)
+            .subscribe(data => {
+                this.students.push(data);
+                this.student = new Student();
+            });
+        }
+    }
+
+    onUpdate(student: Student) {
+        this.student = student;
+    }
+
+    onDelete(id: number) {
+        this.studentService.deleteStudent(id)
         .subscribe(data => {
-            this.students.push(data);
-            this.student = new Student();
+            this.students = this.students.filter(s => s.id !== id);
         });
     }
 

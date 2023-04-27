@@ -11,6 +11,10 @@ import { OtroComponent } from './components/otro/otro.component';
 import { StudentsComponent } from './components/students/students.component';
 import { ManagerHomepageComponent } from './components/manager-homepage/manager-homepage.component';
 import { StudentService } from './service/student.service';
+import { StudentInfoComponent } from './components/student-info/student-info.component';
+import { ChildPathOneComponent } from './components/child-path-one/child-path-one.component';
+import { ChildPathTwoComponent } from './components/child-path-two/child-path-two.component';
+import { ChildPathThreeComponent } from './components/child-path-three/child-path-three.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { StudentService } from './service/student.service';
     NavbarComponent,
     OtroComponent,
     StudentsComponent,
-    ManagerHomepageComponent
+    ManagerHomepageComponent,
+    StudentInfoComponent,
+    ChildPathOneComponent,
+    ChildPathTwoComponent,
+    ChildPathThreeComponent
   ],
   imports: [
     BrowserModule,
