@@ -34,4 +34,8 @@ export class StudentService {
     deleteStudent(id: number) {
         return this.http.delete<Student>(`${this.url}/students/${id}`);
     }
+
+    exportStudents() {
+        return this.http.get(`${this.url}/report`, { responseType: 'blob' });
+    }
 }

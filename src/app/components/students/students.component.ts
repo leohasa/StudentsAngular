@@ -50,4 +50,18 @@ export class StudentsComponent implements OnInit {
         });
     }
 
+    exportStudents() {
+        this.studentService.exportStudents().subscribe(
+            response => {
+                const url = window.URL.createObjectURL(response);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'studentsReporot.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+        );
+    }
+
 }
